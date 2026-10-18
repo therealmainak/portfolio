@@ -78,7 +78,7 @@ export function ProjectsSection() {
     <section 
       ref={sectionRef} 
       id="projects" 
-      className="w-full lg:h-[100svh] min-h-screen bg-black text-white flex flex-col py-10 lg:pt-8 lg:pb-[64px] relative z-0 overflow-x-clip"
+      className="w-full lg:h-[100svh] md:min-h-screen bg-black text-white flex flex-col pt-8 pb-[24px] md:py-10 lg:pt-8 lg:pb-[64px] relative z-0 overflow-x-clip"
     >
       <style>{`
         @media (prefers-reduced-motion: no-preference) {

@@ -5,7 +5,7 @@ import { SiGmail, SiWhatsapp } from "react-icons/si";
 
 export function ContactSection() {
   return (
-    <section className="w-full bg-black py-[64px] md:py-[96px] text-white">
+    <section className="w-full bg-black pt-[24px] pb-[64px] md:py-[96px] text-white">
       <div className="w-full max-w-[1280px] mx-auto px-[20px] md:px-[32px] lg:px-[64px] flex flex-col md:flex-row items-start md:items-center justify-between gap-[36px] md:gap-[48px] lg:gap-[96px]">
         
         {/* Left Side - Photo, About & Contact Info */}

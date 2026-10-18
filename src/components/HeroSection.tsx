@@ -24,13 +24,35 @@ export function HeroSection() {
   ];
 
   return (
-    <section className="relative w-full h-[100svh] overflow-hidden flex flex-col justify-center bg-white">
+    <section className="relative w-full h-[65vh] h-[65svh] md:h-[100svh] overflow-hidden flex flex-col justify-start md:justify-center bg-[#6FA8DC] md:bg-white">
+      <style>{`
+        @media (max-width: 767px) {
+          .hero-video {
+            position: absolute !important;
+            right: -36% !important;
+            bottom: -12% !important;
+            width: 170% !important;
+            height: auto !important;
+            max-width: none !important;
+            -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 15%) !important;
+            mask-image: linear-gradient(to bottom, transparent 0%, black 15%) !important;
+          }
+        }
+        @media (min-width: 768px) {
+          .hero-video {
+            width: 100% !important;
+            height: 100% !important;
+            object-fit: cover !important;
+            object-position: 62% top !important;
+          }
+        }
+      `}</style>
+
       {/* Video Background */}
-      <div className="absolute inset-0 z-0">
+      <div className="absolute inset-0 z-0 overflow-hidden">
         <LoopVideo 
           src="/media/hero.mp4" 
-          className="w-full h-full object-cover block" 
-          style={{ objectPosition: "62% top" }}
+          className="hero-video block" 
         />
       </div>
 
@@ -69,26 +91,26 @@ export function HeroSection() {
       {/* Main Container for Text */}
       <div className="relative z-10 w-full h-full max-w-[1280px] mx-auto flex flex-col pointer-events-none">
         
-        {/* Text Block: On mobile sits in lower part so it doesn't cover character's face */}
-        <div className="flex-1 flex flex-col justify-end pb-[90px] md:justify-center md:pb-0 px-[20px] md:px-[32px] lg:px-[64px] pointer-events-auto">
-          <div className="max-w-[560px]">
-            <h1 className="text-white text-[36px] sm:text-[40px] md:text-[48px] lg:text-[64px] font-bold leading-tight mb-3 md:mb-5 drop-shadow-[0_2px_10px_rgba(0,0,0,0.85)] md:drop-shadow-none">
+        {/* Text Block: On mobile starts ~68px from top, 20px from left, max-w ~60% */}
+        <div className="flex-1 flex flex-col justify-start pt-[68px] md:pt-0 md:justify-center pl-[20px] pr-0 md:px-[32px] lg:px-[64px] pointer-events-auto">
+          <div className="w-[60vw] max-w-[240px] md:w-auto md:max-w-[560px]">
+            <h1 className="text-white text-[30px] md:text-[64px] font-bold leading-[1.15] md:leading-tight mb-[12px] md:mb-5">
               Hey, I am {site.name}
             </h1>
-            <p className="text-white text-[15px] sm:text-[16px] md:text-[20px] font-normal leading-[1.5] mb-3 md:mb-4 drop-shadow-[0_1px_6px_rgba(0,0,0,0.85)] md:drop-shadow-none">
+            <p className="text-white text-[14px] md:text-[20px] font-normal leading-[1.5] mb-[12px] md:mb-4">
               I turn ambiguity into clarity. I am a UI/UX designer and end-to-end product builder, obsessively curious about people&apos;s behavior and the <i className="italic">why behind it all</i>.
             </p>
-            <p className="text-white text-[15px] sm:text-[16px] md:text-[20px] font-normal leading-[1.5] mb-6 md:mb-8 drop-shadow-[0_1px_6px_rgba(0,0,0,0.85)] md:drop-shadow-none">
+            <p className="text-white text-[14px] md:text-[20px] font-normal leading-[1.5] mb-[16px] md:mb-8">
               I am currently in my final year of my master&apos;s degree in UI/UX design.
             </p>
             
-            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
-              <Button href="#projects" onClick={handleScroll} className="min-h-[44px]">
+            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-0 sm:gap-4">
+              <Button href="#projects" onClick={handleScroll} className="min-h-[40px] md:min-h-[44px] py-[10px] md:py-[14px] px-[24px] md:px-[28px]">
                 See projects
               </Button>
               
-              {/* Mobile Tool Logos: small horizontal row (28px each) under button */}
-              <div className="flex md:hidden items-center gap-2 mt-2 sm:mt-0">
+              {/* Mobile Tool Logos: small horizontal row (28px each) 12px under button */}
+              <div className="flex md:hidden items-center gap-2 mt-[12px] sm:mt-0">
                 {toolLogos.map((tool) => (
                   <div
                     key={`mobile-tool-${tool.name}`}
@@ -110,9 +132,9 @@ export function HeroSection() {
       </div>
 
       {/* Fade Transition (Inside Hero at the bottom) */}
-      <div className="absolute bottom-0 left-0 w-full h-[260px] z-30 pointer-events-none">
+      <div className="absolute bottom-0 left-0 w-full h-[28px] md:h-[260px] z-30 pointer-events-none">
         {/* Gradient to soften into black on the bottom edge */}
-        <div className="absolute bottom-0 left-0 w-full h-1/3 bg-gradient-to-b from-transparent to-black"></div>
+        <div className="absolute bottom-0 left-0 w-full h-full md:h-1/3 bg-gradient-to-b from-transparent to-black"></div>
       </div>
     </section>
   );
