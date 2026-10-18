@@ -35,6 +35,15 @@ export const caseStudies: Project[] = [
     thumbnail: "/case-studies/covers/case-3.jpg",
     href: "/case-studies/case-3",
   },
+  {
+    id: "case-4",
+    title: "Blinkit Retention Case Study",
+    brief:
+      "For Blinkit users who can't recall which previously bought item they actually liked. This redesign adds memory cues to 'Bought earlier', so users instantly recognise the right product and reorder with confidence. Blinkit remembering for them builds trust and drives retention.",
+    pdf: "/case-studies/case-4.pdf",
+    thumbnail: "/case-studies/covers/case-4.jpg",
+    href: "/case-studies/case-4",
+  },
 ];
 
 export const miniCaseStudies: Project[] = [

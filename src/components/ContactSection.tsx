@@ -5,17 +5,17 @@ import { SiGmail, SiWhatsapp } from "react-icons/si";
 
 export function ContactSection() {
   return (
-    <section className="w-full bg-black py-[96px] text-white">
-      <div className="w-full max-w-[1280px] mx-auto px-[20px] md:px-[32px] lg:px-[64px] flex flex-col md:flex-row items-center justify-between gap-[48px] lg:gap-[96px]">
+    <section className="w-full bg-black py-[64px] md:py-[96px] text-white">
+      <div className="w-full max-w-[1280px] mx-auto px-[20px] md:px-[32px] lg:px-[64px] flex flex-col md:flex-row items-start md:items-center justify-between gap-[36px] md:gap-[48px] lg:gap-[96px]">
         
         {/* Left Side - Photo, About & Contact Info */}
         <div className="w-full md:w-3/5 lg:w-2/3 flex flex-col items-start max-w-[720px]">
-          {/* Photo: 180px wide, natural portrait ratio, cropped white border with scale-1.04, 16px rounded corners */}
+          {/* Photo: ~120px wide on mobile (rounded 12px), 180px wide on desktop (rounded 16px) */}
           <div 
-            className="relative w-[180px] aspect-[427/562] rounded-[16px] overflow-hidden mb-[24px] shrink-0"
+            className="relative w-[120px] md:w-[180px] aspect-[427/562] overflow-hidden mb-[20px] md:mb-[24px] shrink-0"
             style={{
               borderRadius: "16px",
-              clipPath: "inset(0 round 16px)",
+              clipPath: "inset(0 round 12px)",
             }}
           >
             <Image
@@ -23,7 +23,7 @@ export function ContactSection() {
               alt="Mainak"
               fill
               className="object-cover scale-[1.04]"
-              sizes="180px"
+              sizes="(max-width: 768px) 120px, 180px"
               priority
             />
           </div>
@@ -50,7 +50,7 @@ export function ContactSection() {
           <div className="flex flex-col gap-[16px] mt-[32px]">
             <a
               href={`mailto:${site.email}`}
-              className="flex items-center gap-[12px] group hover:opacity-80 transition-opacity"
+              className="flex items-center gap-[12px] group hover:opacity-80 transition-opacity min-h-[44px]"
             >
               <SiGmail className="w-[22px] h-[22px] md:w-[24px] md:h-[24px]" />
               <span className="text-[16px] md:text-[18px]">{site.email}</span>
@@ -60,7 +60,7 @@ export function ContactSection() {
               href={site.whatsappLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-[12px] group hover:opacity-80 transition-opacity"
+              className="flex items-center gap-[12px] group hover:opacity-80 transition-opacity min-h-[44px]"
             >
               <SiWhatsapp className="w-[22px] h-[22px] md:w-[24px] md:h-[24px]" />
               <span className="text-[16px] md:text-[18px]">{site.phoneDisplay}</span>
@@ -68,10 +68,10 @@ export function ContactSection() {
           </div>
         </div>
 
-        {/* Right Side - Dog Image (Vertically centered with whole left column, soft edge fade) */}
-        <div className="w-full md:w-2/5 lg:w-1/3 flex justify-center md:justify-end">
+        {/* Right Side - Dog Image: ~120px on mobile placed at bottom right below contacts; desktop vertically centered ~240px */}
+        <div className="w-full md:w-2/5 lg:w-1/3 flex justify-end">
           <div 
-            className="relative w-[220px] sm:w-[240px] aspect-[676/768] overflow-hidden"
+            className="relative w-[120px] md:w-[220px] lg:w-[240px] aspect-[676/768] overflow-hidden"
             style={{
               WebkitMaskImage: "radial-gradient(ellipse 75% 75% at center, black 50%, transparent 100%)",
               maskImage: "radial-gradient(ellipse 75% 75% at center, black 50%, transparent 100%)"
@@ -82,7 +82,7 @@ export function ContactSection() {
               alt="Sleeping golden retriever on office chair"
               fill
               className="object-contain"
-              sizes="(max-width: 768px) 220px, 240px"
+              sizes="(max-width: 768px) 120px, 240px"
             />
           </div>
         </div>
