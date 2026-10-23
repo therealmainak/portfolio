@@ -13,8 +13,8 @@ export const caseStudies: Project[] = [
     title: "Chronicle – Reading App",
     brief:
       "A short-fiction reading app that turns doom-scrolling into joyful, productive reading. Built on user research, it helps casual readers build a lasting reading habit and aims to make literature mainstream again.",
-    pdf: "/case-studies/case-1.pdf",
-    thumbnail: "/case-studies/covers/case-1.jpg",
+    pdf: "/case-studies/case-1.pdf?v=2026-10-22",
+    thumbnail: "/case-studies/covers/case-1.jpg?v=2026-10-22",
     href: "/case-studies/case-1",
   },
   {
@@ -22,8 +22,8 @@ export const caseStudies: Project[] = [
     title: "INCH – Fitness App",
     brief:
       "A user-centric fitness app for beginner gym-goers who drop off early. Progress starts in week one but goes untracked; INCH tracks these micro-improvements so users see they are improving even before the mirror shows it. Built on user research, this feedback loop keeps users motivated and aims to reduce gym drop-offs.",
-    pdf: "/case-studies/case-2.pdf",
-    thumbnail: "/case-studies/covers/case-2.jpg",
+    pdf: "/case-studies/case-2.pdf?v=2026-10-22",
+    thumbnail: "/case-studies/covers/case-2.jpg?v=2026-10-22",
     href: "/case-studies/case-2",
   },
   {
@@ -31,8 +31,8 @@ export const caseStudies: Project[] = [
     title: "Mano – Student Mental Health App",
     brief:
       "An AI-native chat app in Hinglish, designed for Indian students going through stress and low moments. Mano offers a safe, judgement-free space where students feel accepted and can share their student journey. Designed with empathy and user research, it aims to support better mental health and wellbeing.",
-    pdf: "/case-studies/case-3.pdf",
-    thumbnail: "/case-studies/covers/case-3.jpg",
+    pdf: "/case-studies/case-3.pdf?v=2026-10-22",
+    thumbnail: "/case-studies/covers/case-3.jpg?v=2026-10-22",
     href: "/case-studies/case-3",
   },
   {
